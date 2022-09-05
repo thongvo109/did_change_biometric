@@ -13,7 +13,7 @@ public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
     case "get_token":
-      self.authenticateBiometric( data,code in  
+      self.authenticateBiometric { data,code in  
       
       switch code { 
          case 200:
@@ -23,7 +23,7 @@ public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
           default:
           result(FlutterError(code:  "unknow", message: data, details: nil))
 
-      })
+      }}
              default:
                 result(FlutterMethodNotImplemented)
 
