@@ -11,7 +11,7 @@ class DidChangeAuthLocal {
   static final DidChangeAuthLocal _instance = DidChangeAuthLocal._internal();
 
   static DidChangeAuthLocal get instance => _instance;
-    
+
   Future<BiometricStatus?> onCheckBiometric({String? token}) async {
     return Platform.isIOS
         ? checkBiometricIOS(token: token ?? '')
@@ -20,7 +20,7 @@ class DidChangeAuthLocal {
 
   Future<BiometricStatus?> checkBiometricIOS({String token = ''}) async {
     try {
-      final result = await methodChannel.invokeMethod('check');
+      final result = await methodChannel.invokeMethod('get_token');
       debugPrint("checkBiometricIOS Token: ${result.toString()}");
       debugPrint("checkBiometricIOS Token Local: ${token.toString()}");
       if (token == result && token.isNotEmpty) {
