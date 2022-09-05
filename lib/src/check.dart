@@ -42,7 +42,7 @@ class DidChangeAuthLocal {
 
   Future<BiometricStatus?> checkBiometricAndroid() async {
     try {
-      final result = await methodChannel.invokeMethod('check');
+      final result = await methodChannel.invokeMethod('get_token');
       return result == 'biometric_valid' ? BiometricStatus.valid : null;
     } on PlatformException catch (e) {
       switch (e.code) {

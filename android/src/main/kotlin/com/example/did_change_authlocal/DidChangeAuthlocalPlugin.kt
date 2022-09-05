@@ -38,7 +38,7 @@ class DidChangeAuthlocalPlugin: FlutterPlugin, MethodCallHandler {
 
   @RequiresApi(Build.VERSION_CODES.N)
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    if (call.method == "check") {
+    if (call.method == "get_token") {
       settingFingerPrint(result)
     } else {
       result.notImplemented()
