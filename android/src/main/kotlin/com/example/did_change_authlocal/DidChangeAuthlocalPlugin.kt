@@ -3,6 +3,7 @@ package com.example.did_change_authlocal
 import android.os.Build
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyPermanentlyInvalidatedException
+
 import android.security.keystore.KeyProperties
 import androidx.annotation.NonNull
 import androidx.annotation.RequiresApi
@@ -37,7 +38,7 @@ class DidChangeAuthlocalPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   @RequiresApi(Build.VERSION_CODES.N)
-  override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
+  override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "check") {
       settingFingerPrint(result)
     } else {
@@ -50,7 +51,7 @@ class DidChangeAuthlocalPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   @RequiresApi(Build.VERSION_CODES.N)
-  private fun settingFingerPrint( result: MethodChannel.Result) {
+  private fun settingFingerPrint( result: Result) {
     val cipher: Cipher = getCipher()
     val secretKey: SecretKey = getSecretKey()
 
