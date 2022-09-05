@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import LocalAuthentication
 
 public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
