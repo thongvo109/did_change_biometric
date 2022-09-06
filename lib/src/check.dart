@@ -14,8 +14,17 @@ class DidChangeAuthLocal {
 
   Future<BiometricStatus?> onCheckBiometric({String? token}) async {
     return Platform.isIOS
-        ? checkBiometricIOS(token: token ?? '')
-        : checkBiometricAndroid();
+        ? await checkBiometricIOS(token: token ?? '')
+        : await checkBiometricAndroid();
+  }
+
+  Future<String> getTokenBiometric() async {
+    try {
+      final result = await methodChannel.invokeMethod('get_token');
+      return result.toString();
+    } catch (_) {
+      return '';
+    }
   }
 
   Future<BiometricStatus?> checkBiometricIOS({String token = ''}) async {
@@ -53,6 +62,9 @@ class DidChangeAuthLocal {
         default:
           return BiometricStatus.invalid;
       }
+    } on MissingPluginException catch (e) {
+      debugPrint(e.message);
+      return null;
     }
   }
 }
