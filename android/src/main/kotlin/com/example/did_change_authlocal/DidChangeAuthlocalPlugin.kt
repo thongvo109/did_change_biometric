@@ -69,7 +69,7 @@ class DidChangeAuthlocalPlugin: FlutterPlugin, MethodCallHandler {
       e.printStackTrace()
       result.error("biometric_invalid","Invalid biometric",e.toString())
     }
-    val promptInfo = BiometricPrompt.PromptInfo.Builder().setTitle("").setDescription("").setNegativeButtonText("Shit").build()
+    val promptInfo = BiometricPrompt.PromptInfo.Builder().setTitle("Biometric").setDescription("Check Biometric").setNegativeButtonText("OK").build()
 
     try {
       cipher.init(Cipher.ENCRYPT_MODE, secretKey)
