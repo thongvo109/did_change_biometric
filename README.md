@@ -10,8 +10,5 @@ The reason I develop the plugin is because I want to protect users when using Fa
 
 You need to watch the video to understand more about how it works
 
-![](demo.mp4)
+https://user-images.githubusercontent.com/64881072/188964779-5fcf480f-fbdc-4b76-a0fa-9e4abf814a92.mp4
 
-<video width="320" height="720" controls="controls">
-  <source src="https://github.com/thongvo109/did_change_biometric/blob/main/demo.mp4" type="video/mp4">
-</video>
