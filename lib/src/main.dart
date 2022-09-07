@@ -12,7 +12,7 @@ class DidChangeAuthLocal {
 
   static DidChangeAuthLocal get instance => _instance;
 
-  Future<BiometricStatus?> onCheckBiometric({String? token}) async {
+  Future<AuthLocalStatus?> onCheckBiometric({String? token}) async {
     return Platform.isIOS
         ? await checkBiometricIOS(token: token ?? '')
         : await checkBiometricAndroid();
@@ -27,40 +27,42 @@ class DidChangeAuthLocal {
     }
   }
 
-  Future<BiometricStatus?> checkBiometricIOS({String token = ''}) async {
+  Future<AuthLocalStatus?> checkBiometricIOS({String token = ''}) async {
     try {
       final result = await methodChannel.invokeMethod('get_token');
       debugPrint("checkBiometricIOS Token: ${result.toString()}");
-      debugPrint("checkBiometricIOS Token Local: ${token.toString()}");
+      debugPrint("checkBiometricIOS Token Saved: ${token.toString()}");
       if (token == result && token.isNotEmpty) {
-        return BiometricStatus.valid;
+        return AuthLocalStatus.valid;
       } else if (token != result && token != '') {
-        return BiometricStatus.changed;
+        return AuthLocalStatus.changed;
       } else {
-        return BiometricStatus.invalid;
+        return AuthLocalStatus.invalid;
       }
     } on PlatformException catch (e) {
       switch (e.code) {
         case "biometric_invalid":
-          return BiometricStatus.invalid;
+          return AuthLocalStatus.invalid;
         default:
           return null;
       }
     }
   }
 
-  Future<BiometricStatus?> checkBiometricAndroid() async {
+  //For Android ( Only Fingerprint )
+  //If user does not update Finger then Biometric Status will be AuthLocalStatus.valid
+  Future<AuthLocalStatus?> checkBiometricAndroid() async {
     try {
       final result = await methodChannel.invokeMethod('check');
-      return result == 'biometric_valid' ? BiometricStatus.valid : null;
+      return result == 'biometric_valid' ? AuthLocalStatus.valid : null;
     } on PlatformException catch (e) {
       switch (e.code) {
         case 'biometric_did_change':
-          return BiometricStatus.changed;
+          return AuthLocalStatus.changed;
         case 'biometric_invalid':
-          return BiometricStatus.invalid;
+          return AuthLocalStatus.invalid;
         default:
-          return BiometricStatus.invalid;
+          return null;
       }
     } on MissingPluginException catch (e) {
       debugPrint(e.message);

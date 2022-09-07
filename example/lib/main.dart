@@ -47,7 +47,7 @@ class _HomwPageState extends State<HomwPage> with WidgetsBindingObserver {
     await DidChangeAuthLocal.instance
         .onCheckBiometric(token: _tokenBiometric)
         .then((value) {
-      if (value == BiometricStatus.changed) {
+      if (value == AuthLocalStatus.changed) {
         showDialog(
             context: context,
             builder: (BuildContext context) {

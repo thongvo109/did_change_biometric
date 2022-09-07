@@ -1,1 +1,1 @@
-enum BiometricStatus { valid, changed, invalid }
+enum AuthLocalStatus { valid, changed, invalid }
