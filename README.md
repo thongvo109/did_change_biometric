@@ -9,3 +9,5 @@ The reason I develop the plugin is because I want to protect users when using Fa
 ## For exmaple
 
 You need to watch the video to understand more about how it works
+
+![demo](https://user-images.githubusercontent.com/64881072/188966152-3479f548-6fec-4e58-b140-4ff451499380.gif)
