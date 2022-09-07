@@ -5,8 +5,6 @@ import LocalAuthentication
 public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "did_change_authlocal", binaryMessenger: registrar.messenger())
-        
-        
         let instance = SwiftDidChangeAuthlocalPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
@@ -30,13 +28,12 @@ public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
         }
     }
     
+    
+    
+    
     func authenticateBiometric(complete : @escaping (String?, Int?) -> Void){
         let context = LAContext()
-        
         var authError : NSError?
-        
-        
-        
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) == false {
             complete(nil, authError?.code)
             return
@@ -44,8 +41,8 @@ public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
         
         if let biometricData = context.evaluatedPolicyDomainState {
             let base64Data = biometricData.base64EncodedData()
-            let stringData = String(data: base64Data, encoding: .utf8)
-            complete(stringData, 200)
+            let token = String(data: base64Data, encoding: .utf8)
+            complete(token, 200)
         }else {
             complete(nil, 998)
         }
