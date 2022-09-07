@@ -29,9 +29,9 @@ class _HomwPageState extends State<HomwPage> with WidgetsBindingObserver {
 
   @override
   void initState() {
-    super.initState();
-    onGetTokenBiometric();
     WidgetsBinding.instance.addObserver(this);
+    onGetTokenBiometric();
+    super.initState();
   }
 
   @override

@@ -1,9 +1,9 @@
 name: did_change_authlocal
 description: The package check did change authlocal
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/thongvo109/did_change_biometric
-homepage: http://thongvo109.com
-
+issues: https://github.com/thongvo109/did_change_biometric/issues
+homepage: https://thongvo109.com
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
