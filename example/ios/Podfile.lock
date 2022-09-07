@@ -2,26 +2,20 @@ PODS:
   - did_change_authlocal (0.0.1):
     - Flutter
   - Flutter (1.0.0)
-  - local_auth_ios (0.0.1):
-    - Flutter
 
 DEPENDENCIES:
   - did_change_authlocal (from `.symlinks/plugins/did_change_authlocal/ios`)
   - Flutter (from `Flutter`)
-  - local_auth_ios (from `.symlinks/plugins/local_auth_ios/ios`)
 
 EXTERNAL SOURCES:
   did_change_authlocal:
     :path: ".symlinks/plugins/did_change_authlocal/ios"
   Flutter:
     :path: Flutter
-  local_auth_ios:
-    :path: ".symlinks/plugins/local_auth_ios/ios"
 
 SPEC CHECKSUMS:
   did_change_authlocal: 4c744cc61a03ecfc0a058f4eb12128e0466edbc0
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  local_auth_ios: 0d333dde7780f669e66f19d2ff6005f3ea84008d
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 
