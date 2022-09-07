@@ -13,5 +13,5 @@ You need to watch the video to understand more about how it works
 ![](demo.mp4)
 
 <video width="320" height="720" controls="controls">
-  <source src="demo.mp4" type="video/mp4">
+  <source src="https://github.com/thongvo109/did_change_biometric/blob/main/demo.mp4" type="video/mp4">
 </video>
