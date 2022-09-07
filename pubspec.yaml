@@ -1,7 +1,8 @@
 name: did_change_authlocal
-description: A new Flutter plugin project.
-version: 0.0.4
-homepage:
+description: The package check did change authlocal
+version: 0.0.1
+repository: https://github.com/thongvo109/did_change_biometric
+homepage: http://thongvo109.com
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
@@ -11,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  local_auth: ^2.1.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

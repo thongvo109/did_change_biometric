@@ -15,15 +15,13 @@ public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
     switch call.method {
     case "get_token":
       self.authenticateBiometric { data,code in  
-      
       switch code { 
          case 200:
           result(data)
          case -7:
           result(FlutterError(code:"biometric_invalid",message:"Invalid biometric",details: data as Any))
           default:
-          result(FlutterError(code:  "unknow", message: data, details: nil))
-
+          result(FlutterError(code:"unknow", message: data, details: nil))
       }}
              default:
                 result(FlutterMethodNotImplemented)
@@ -31,7 +29,6 @@ public class SwiftDidChangeAuthlocalPlugin: NSObject, FlutterPlugin {
       
     }
   }
-
 
     func authenticateBiometric(complete : @escaping (String?, Int?) -> Void){
         let context = LAContext()
