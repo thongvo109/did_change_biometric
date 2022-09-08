@@ -4,7 +4,7 @@ This is a plugin that allows data to be retrieved and compared when the user has
 
 ## The First
 
-The reason I develop the plugin is because I want to protect users when using Face ID (iOS) and Fingerprint (Android) security when I want to add a new layer of protection, which is Passcode. Bad guys can peek then will update their Face ID & Fingerprint and will perform bad actions. This is extremely dangerous with Financial Apps
+The reason I start working on this plugin is because I want to protect users when using biometric authentication (Face ID and Touch ID) when a new layer of protection is needed, which is Passcode. Imagine someone can secretly take advantage by adding their face or fingerprints to the system while your device is unlocked so they can unlock it when you’re not there without your permission, and therefore they’re able to access everything. This plugin prevents just that. Only faces and fingerprints that were added before the first authentication can be used to unlock the app.
 
 ## Demo
 
