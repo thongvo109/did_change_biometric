@@ -4,20 +4,20 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'did_change_authlocal'
-  s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.version          = '1.0.0'
+  s.summary          = 'Detect biometric data changes on iOS and Android.'
   s.description      = <<-DESC
-A new Flutter plugin project.
+A Flutter plugin that detects when biometric data (Face ID, Touch ID) has been
+changed on the device. Helps protect against unauthorized biometric enrollment.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://thongvo109.com'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Thong Vo' => 'thongvo109@gmail.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'did_change_authlocal/Sources/did_change_authlocal/**/*.swift'
   s.dependency 'Flutter'
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '12.0'
 
-  # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 end
