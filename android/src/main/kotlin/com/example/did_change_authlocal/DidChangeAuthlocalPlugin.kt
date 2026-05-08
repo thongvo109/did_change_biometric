@@ -8,8 +8,8 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ProcessLifecycleOwner
 import io.flutter.embedding.engine.plugins.FlutterPlugin
-import io.flutter.embedding.engine.plugins.lifecycle.FlutterLifecycleAdapter
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.EventChannel
@@ -132,7 +132,7 @@ class DidChangeAuthlocalPlugin : FlutterPlugin, MethodCallHandler,
     }
 
     private fun attachLifecycle(binding: ActivityPluginBinding) {
-        lifecycle = FlutterLifecycleAdapter.getActivityLifecycle(binding)
+        lifecycle = ProcessLifecycleOwner.get().lifecycle
         lifecycleObserver = object : DefaultLifecycleObserver {
             override fun onResume(owner: LifecycleOwner) {
                 // User returned from Settings or another app — re-check immediately

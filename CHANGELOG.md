@@ -1,3 +1,8 @@
+## 1.0.1
+
+- Update example Android to declarative Gradle plugins (AGP 8.7.0, Gradle 8.9)
+- Replace `FlutterLifecycleAdapter` with `ProcessLifecycleOwner` (standard AndroidX API)
+
 ## 1.0.0
 
 ### Breaking Changes
