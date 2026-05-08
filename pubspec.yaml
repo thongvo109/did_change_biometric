@@ -2,7 +2,7 @@ name: did_change_authlocal
 description: >-
   A Flutter plugin to detect biometric data changes (Face ID, Touch ID,
   Fingerprint). Protects against unauthorized biometric enrollment.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/thongvo109/did_change_biometric
 issues: https://github.com/thongvo109/did_change_biometric/issues
 homepage: https://thongvo109.com
